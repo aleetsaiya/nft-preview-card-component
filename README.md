@@ -13,6 +13,6 @@ Users should be able to:
 
 ## Built with
 
-- HTML
 - SCSS
 - Flexbox
+- BEM Naming
