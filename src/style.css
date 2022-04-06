@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: hsl(217deg, 54%, 11%);
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.5;
+  height: 100vh;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 20rem;
+  width: 90%;
+  background-color: hsl(216deg, 50%, 16%);
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.card__product-img {
+  width: 100%;
+  height: 17.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background: url("../images/image-equilibrium.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.card__product-img .card__view-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card__product-img:hover {
+  background: linear-gradient(rgba(0, 255, 247, 0.4), rgba(0, 255, 247, 0.4)), url("../images/image-equilibrium.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.card__product-img:hover .card__view-icon {
+  display: block;
+}
+.card__avatar {
+  width: 2rem;
+  border: solid 1px hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+}
+.card__creator {
+  width: 100%;
+  margin: 1rem 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card__creator-info {
+  margin-left: 1rem;
+}
+.card__creator-info--highlight {
+  color: hsl(215deg, 51%, 70%);
+  cursor: pointer;
+}
+.card__creator-info--highlight:hover {
+  color: hsl(178deg, 100%, 50%);
+}
+
+.content {
+  width: 100%;
+  border-bottom: solid 1px hsl(215deg, 32%, 27%);
+  padding-bottom: 1.2rem;
+}
+.content__title {
+  display: inline-block;
+  font-weight: 600;
+  cursor: pointer;
+  margin-block-end: 0px;
+}
+.content__title:hover {
+  color: hsl(178deg, 100%, 50%);
+}
+.content__info {
+  color: hsl(215deg, 51%, 70%);
+  margin-bottom: 1rem;
+}
+.content__price {
+  display: flex;
+  align-items: center;
+  color: hsl(178deg, 100%, 50%);
+}
+.content__time {
+  display: flex;
+  align-items: center;
+  color: hsl(215deg, 51%, 70%);
+}
+.content__icon {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
