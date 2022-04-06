@@ -58,7 +58,7 @@ body {
     height: 17.5rem;
     border-radius: 10px;
     cursor: pointer;
-    background: url("../images/image-equilibrium.jpg");
+    background: url("./images/image-equilibrium.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -76,7 +76,7 @@ body {
           rgba($color-highlight, 0.4),
           rgba($color-highlight, 0.4)
         ),
-        url("../images/image-equilibrium.jpg");
+        url("./images/image-equilibrium.jpg");
       background-size: cover;
       background-position: center;
 
