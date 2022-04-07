@@ -19,8 +19,9 @@ Users should be able to:
 
 ## What I learned
 
+- Use `::after` and set the background color. It can make a block have color on an image
 - Use `aria-label` to increase the web Accessibility
-- I often forget to set the `alt` attribute in `<img/>`. Don't forget to set it.
+- I often forget to set the `alt` attribute in `<img/>`. Don't forget to set it
 - Remember to use `<main>` in html
 - Use `opacity: 0` to hide an image
 
