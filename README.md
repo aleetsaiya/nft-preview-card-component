@@ -19,7 +19,7 @@ Users should be able to:
 
 ## What I learned
 
-- User `aria-label` to increase the web Accessibility
+- Use `aria-label` to increase the web Accessibility
 - I often forget to set the `alt` attribute in `<img/>`. Don't forget to set it.
 - Remember to use `<main>` in html
 - Use `opacity: 0` to hide an image
