@@ -25,13 +25,17 @@ body {
   background-color: $body-bg-color;
   color: $white;
   font-family: "Outfit", sans-serif;
+  font-weight: $font-medium;
+}
+
+main {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   line-height: 1.5;
   height: 100vh;
-  font-weight: $font-medium;
+  max-height: 800px;
 }
 
 .row {
@@ -45,48 +49,67 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
-  max-width: 20rem;
+  padding: 1.8rem;
+  padding-bottom: 1rem;
+  max-width: 23rem;
   width: 90%;
   background-color: $card-bg-color;
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.2);
 
-  &__product-img {
+  &:hover {
+    box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  & > a {
+    display: block;
     width: 100%;
-    height: 17.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-    background: url("./images/image-equilibrium.jpg");
-    background-size: cover;
-    background-position: center;
     position: relative;
 
-    & .card__view-icon {
-      display: none;
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      & > .view-icon {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: "";
+      z-index: 10;
+      opacity: 0;
       position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: rgba($color-highlight, 0.2);
+      transition: all ease 0.2s;
+    }
+
+    & > .card__product-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    & > .view-icon {
+      position: absolute;
+      opacity: 0;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    }
-
-    &:hover {
-      background: linear-gradient(
-          rgba($color-highlight, 0.4),
-          rgba($color-highlight, 0.4)
-        ),
-        url("./images/image-equilibrium.jpg");
-      background-size: cover;
-      background-position: center;
-
-      & .card__view-icon {
-        display: block;
-      }
+      transition: all ease 0.2s;
     }
   }
 
-  &__avatar {
+  & &__avatar {
     width: 2rem;
     border: solid 1px $white;
     border-radius: 50%;
@@ -99,13 +122,16 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    color: $paragraph-bg-color;
 
     &-info {
       margin-left: 1rem;
 
       &--highlight {
-        color: $paragraph-bg-color;
+        color: $white;
         cursor: pointer;
+        text-decoration: none;
+        transition: all ease 0.2s;
 
         &:hover {
           color: $color-highlight;
@@ -120,11 +146,14 @@ body {
   border-bottom: solid 1px $line-color;
   padding-bottom: 1.2rem;
 
-  &__title {
+  & > h1 > a {
     display: inline-block;
     font-weight: $font-bold;
     cursor: pointer;
     margin-block-end: 0px;
+    transition: all ease 0.2s;
+    text-decoration: none;
+    color: $white;
 
     &:hover {
       color: $color-highlight;

@@ -12,13 +12,17 @@ body {
   background-color: hsl(217deg, 54%, 11%);
   color: hsl(0deg, 0%, 100%);
   font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+main {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   line-height: 1.5;
   height: 100vh;
-  font-weight: 400;
+  max-height: 800px;
 }
 
 .row {
@@ -32,40 +36,58 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
-  max-width: 20rem;
+  padding: 1.8rem;
+  padding-bottom: 1rem;
+  max-width: 23rem;
   width: 90%;
   background-color: hsl(216deg, 50%, 16%);
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.2);
 }
-.card__product-img {
+.card:hover {
+  box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.2);
+}
+.card > a {
+  display: block;
   width: 100%;
-  height: 17.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  background: url("./images/image-equilibrium.jpg");
-  background-size: cover;
-  background-position: center;
   position: relative;
 }
-.card__product-img .card__view-icon {
-  display: none;
+.card > a:hover::after {
+  opacity: 1;
+}
+.card > a:hover > .view-icon {
+  opacity: 1;
+}
+.card > a::after {
+  content: "";
+  z-index: 10;
+  opacity: 0;
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(0, 255, 247, 0.2);
+  transition: all ease 0.2s;
+}
+.card > a > .card__product-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.card > a > .view-icon {
+  position: absolute;
+  opacity: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all ease 0.2s;
 }
-.card__product-img:hover {
-  background: linear-gradient(rgba(0, 255, 247, 0.4), rgba(0, 255, 247, 0.4)), url("./images/image-equilibrium.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.card__product-img:hover .card__view-icon {
-  display: block;
-}
-.card__avatar {
+.card .card__avatar {
   width: 2rem;
   border: solid 1px hsl(0deg, 0%, 100%);
   border-radius: 50%;
@@ -77,13 +99,16 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  color: hsl(215deg, 51%, 70%);
 }
 .card__creator-info {
   margin-left: 1rem;
 }
 .card__creator-info--highlight {
-  color: hsl(215deg, 51%, 70%);
+  color: hsl(0deg, 0%, 100%);
   cursor: pointer;
+  text-decoration: none;
+  transition: all ease 0.2s;
 }
 .card__creator-info--highlight:hover {
   color: hsl(178deg, 100%, 50%);
@@ -94,13 +119,16 @@ body {
   border-bottom: solid 1px hsl(215deg, 32%, 27%);
   padding-bottom: 1.2rem;
 }
-.content__title {
+.content > h1 > a {
   display: inline-block;
   font-weight: 600;
   cursor: pointer;
   margin-block-end: 0px;
+  transition: all ease 0.2s;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
 }
-.content__title:hover {
+.content > h1 > a:hover {
   color: hsl(178deg, 100%, 50%);
 }
 .content__info {
